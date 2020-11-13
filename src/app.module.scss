@@ -1,0 +1,122 @@
+.app {
+  margin: 16px auto;
+  max-width: 360px;
+  height: calc(100vh - 32px);
+  min-height: 400px;
+  width: 100%;
+  background: linear-gradient(180deg, #310050 0%, #000000 100%);
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & h2 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 0;
+    margin-bottom: 22px;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  & .btn {
+    background: #5a3472;
+    border-radius: 4px;
+    margin: 0;
+    padding: 0;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: none;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & .items {
+    margin-bottom: 24px;
+    height: 62vh;
+    min-height: 240px;
+    overflow: hidden;
+    overflow-y: auto;
+
+    & > div {
+      &:not(:last-child) {
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  & .card {
+    background: #fff;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-gap: 0 16px;
+    padding: 16px 16px 9px;
+
+    & .image {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:after {
+        font-size: 20px;
+      }
+
+      &:global(.live) {
+        background: linear-gradient(180deg, #ffb800 0%, #fff7b0 100%);
+        &:after {
+          content: '💥';
+        }
+      }
+
+      &:global(.life) {
+        background: linear-gradient(180deg, #ad00ff 0%, #ffb0e9 100%);
+        &:after {
+          content: '🐣';
+        }
+      }
+
+      &:global(.dead) {
+        background: linear-gradient(180deg, #0d658a 0%, #b0ffb4 100%);
+        &:after {
+          content: '💀';
+        }
+      }
+    }
+
+    & .content {
+      h4 {
+        font-weight: 500;
+        letter-spacing: 0.15;
+        font-size: 20px;
+        line-height: 28px;
+        margin: 0;
+      }
+      span {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.25;
+      }
+    }
+  }
+}
