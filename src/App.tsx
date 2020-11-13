@@ -1,10 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
 import styles from './app.module.scss';
-import useLocalStorage from './useLocalStorage';
+import useCells from './useCells';
 
 const App = () => {
-  const { cells, setItems } = useLocalStorage();
+  const { cells, setItems } = useCells();
 
   const onClick = () => {
     const cell = Math.random() >= 0.5 ? 'dead' : 'live';

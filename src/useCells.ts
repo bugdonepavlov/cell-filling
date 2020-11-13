@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 
 // const initialState = ['dead', 'live', 'dead', 'live', 'live', 'live'];
 
-const useSettings = () => {
+const useCells = () => {
   const [elements, setElements] = useState<string[]>([]);
 
   const cells = useMemo(() => {
@@ -41,4 +41,4 @@ const useSettings = () => {
   return { setItems, cells };
 };
 
-export default useSettings;
+export default useCells;
