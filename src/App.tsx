@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import cn from 'classnames';
 import styles from './app.module.scss';
-import useCells from './useCells';
+import useCells, { State } from './useCells';
 
-const App = () => {
+const App: React.FC<unknown> = () => {
   const { cells, setItems } = useCells();
 
-  const onClick = () => {
-    const cell = Math.random() >= 0.5 ? 'dead' : 'live';
+  const addCell = useCallback(() => {
+    const cell = Math.random() >= 0.5 ? State.Dead : State.Live;
 
     setItems(cell);
-  };
+  }, [setItems]);
 
   const getText = (type: string) => {
-    if (type === 'life') {
+    if (type === State.Life) {
       return (
         <>
           <h4>Жизнь</h4>
@@ -22,7 +22,7 @@ const App = () => {
       );
     }
 
-    if (type === 'dead') {
+    if (type === State.Dead) {
       return (
         <>
           <h4>Мёртвая</h4>
@@ -53,7 +53,7 @@ const App = () => {
           ))}
       </div>
 
-      <button type="button" className={styles.btn} onClick={onClick}>
+      <button type="button" className={styles.btn} onClick={addCell}>
         сотворить
       </button>
     </div>
