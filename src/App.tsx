@@ -12,7 +12,7 @@ const App: React.FC<unknown> = () => {
     setItems(cell);
   }, [setItems]);
 
-  const getText = (type: string) => {
+  const getText = (type: State) => {
     if (type === State.Life) {
       return (
         <>
